@@ -15,10 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="L_Oprat.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="B_Oprat.cpp">
+    <ClCompile Include="Conditional Statements.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

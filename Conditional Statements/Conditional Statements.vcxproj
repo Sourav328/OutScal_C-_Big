@@ -21,8 +21,8 @@
   <PropertyGroup Label="Globals">
     <VCProjectVersion>17.0</VCProjectVersion>
     <Keyword>Win32Proj</Keyword>
-    <ProjectGuid>{dda3bbb5-86b6-4c4c-910b-237f24cb328c}</ProjectGuid>
-    <RootNamespace>LOprat</RootNamespace>
+    <ProjectGuid>{3120a63b-7161-4419-a5bd-9d9c7db40263}</ProjectGuid>
+    <RootNamespace>ConditionalStatements</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -127,8 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="B_Oprat.cpp" />
-    <ClCompile Include="L_Oprat.cpp" />
+    <ClCompile Include="Conditional Statements.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

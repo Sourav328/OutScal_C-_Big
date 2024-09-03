@@ -22,29 +22,70 @@ int main()
     cout << "Enter player health (0-100): ";
     cin >> Player_Health;
 
-    if (Is_Player_In_Range)
+
+    if (Is_Player_In_Range == true) 
     {
-        if (Is_Player_Attacking)
+
+        if (Is_Player_Attacking != true)
+
         {
-            cout << "The enemy should attack." << endl;
+
+            cout << "The Enemy Should Attack" << endl;
+
+        }
+        else
+        {
+
+            cout << "Player Is not in Rang" << endl;
+
+        }
+        if (Is_Player_Defending == true)
+
+        {
+
+            cout << "Enemy Should Hold" << endl;
+
+        }
+        else
+        {
+
+            cout << "Enemy is not there" << endl;
+
+        }
+        if (Player_Health <= 20 && Is_Player_Attacking == true)
+        {
+
+            cout << "Player Should Deliver A Range Attack " << endl;
+
+        }
+        else 
+        {
+
+            cout << "Player Attacking Is Out of Range " << endl;
+
+        }
+        if (Is_Player_Defending == false && Player_Health == 100 || Player_Health <= 10)
+        {
+
+            cout << "Enemy Should Do A Special Ability Attack" << endl;
+
+        }
+        else
+        {
+            cout << "Game Over" << endl;
         }
 
-        if (Is_Player_Attacking) {
-            cout << "Enemy should hold." << endl;
-        }
 
-        if (Is_Player_Attacking && Player_Health < 20) {
-            cout << "Player should deliver a rage attack." << endl;
-        }
-
-        if (Is_Player_Defending && (Player_Health == 100 || Player_Health < 10)) {
-            cout << "Enemy should do a special ability attack." << endl;
-        }
     }
     else 
     {
-        cout << "Player is out of range, no action required." << endl;
+
+        cout<<"Player Is Out Of Range" << endl;
+
     }
+
+    
+
 
     return 0;
 }
