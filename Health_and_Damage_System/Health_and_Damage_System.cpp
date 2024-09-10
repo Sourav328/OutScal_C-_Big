@@ -1,4 +1,5 @@
 #include <iostream>
+#include <ctime>
 using namespace std;
 
 void Game_Story()
@@ -35,6 +36,10 @@ public:
     int Attack_Power;
     int Stamina;
 
+    int MaxDamage = 30;
+    int MinDamage = 20;
+    int MaxHealing = 15;
+    int MinHealing =8
 
     Player(string N, int H, int AP, int S)
     {
@@ -59,22 +64,40 @@ public:
     void TakeDamage(int Damage)
     {
 
+        if(Health > 0)
+        {
+            cout << "ohh No , A Critical Hit To Player" << endl;
+            cout << "Enemy is dealing damage of" << Damage << "To The Letho!" << endl;
+            Health = Health - Damage;
+            cout << Name << "Current Health After Reciving Damage is :- " << Health << endl;
 
+        }
+        else
+        {
+            cout << "Our Warrior Died.... :( " << endl;
+        }
 
     }
 
     int GiveDamage()
     {
 
+        Srand(time(0));
+        int rand0mDamage = (rand() % (MaxDamage - MinDamage) + 1) + (MinDamage);
 
-
+        return randomDamage;
     }
 
     void Heal()
 
     {
 
+        Srand(time(0));
+        int randomHeal = (rand() % (MaxHealing - MinHealing = 1) + MinHealing;
 
+        Health = Health + randomHeal;
+        cout << Name << "Healed With HP Of " << rendomHeal << endl;
+        cout << Name << "Health After Healing " << Health << endl;
 
     }
 
