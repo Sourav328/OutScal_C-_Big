@@ -20,7 +20,7 @@ void Game_Story()
     cout << "The hero sets out on a perilous journey to save the kingdom.\n";
     cout << "    He battles monstrous creatures,\nOvercomes treacherous obstacles, and uncovers the secrets of the darkness.\n";
     cout << "    The fate of the kingdom rests on his shoulders.\nWill he succeed in his quest, or will darkness consume Aydho forever?\n";
-    cout << "    And so, the Kingdom of Aydho was reborn,\nIts beacon of hope forever etched in the annals of legend.\n";
+    cout << "    And so, the Kingdom of Aydho was reborn,\nIts beacon of hope forever etched of legend.\n";
 
     cout << "     ||***************************************||\n\n";
 }
@@ -44,7 +44,8 @@ public:
         Stamina = S;
 
         cout << "A new hero has emerged! Meet " << Name << ".\n";
-        cout << Name << " is ready to fight for the Kingdom of Aydho!\n\n";
+        cout << Name << " is ready to fight for the Kingdom of Aydho!\n";
+        cout << "The Last Hope In This darkness\n\n";
        
     }
 
@@ -72,7 +73,7 @@ int main()
         if (User_Input == 'p' || User_Input == 'P')
         {
             string player_name;
-            cout << "Enter the name of your hero: ";
+            cout << "Enter the name of your hero: \n";
             cin >> player_name;
 
             
