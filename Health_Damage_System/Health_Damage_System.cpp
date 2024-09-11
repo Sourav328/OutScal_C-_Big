@@ -30,8 +30,6 @@ class Player
 {
 private:
     string Name;
-
-public:
     int Health;
     int Attack_Power;
     int Stamina;
@@ -41,6 +39,9 @@ public:
     int MaxHealing = 15;
     int MinHealing = 8;
 
+public:
+   
+
     Player(string N, int H, int AP, int S)
     {
         Name = N;
@@ -49,7 +50,7 @@ public:
         Stamina = S;
 
         cout << "A new hero has emerged! Meet " << Name << ".\n";
-        cout << Name << " is ready to fight for the Kingdom of Aydho!\n";
+        cout << Name << " is ready to fight for the Kingdom of Aydho! \n";
         cout << "The Last Hope In This darkness\n\n";
     }
 
@@ -66,7 +67,7 @@ public:
         if (Health > 0)
         {
             cout << "Ohh No , A Critical Hit To Player" << endl;
-            cout << "Enemy is dealing damage of" << Damage << "To The Letho!" << endl;
+            cout << "Enemy is dealing damage of" << Damage << " To The Letho!" << endl;
             Health = Health - Damage;
             cout << Name << "Current Health After Reciving Damage is :- " << Health << endl;
 
@@ -80,14 +81,14 @@ public:
 
     int GiveDamage()
     {
-        srand(time(0));  // Corrected to lowercase
+        srand(time(0));  
         int randomDamage = (rand() % (MaxDamage - MinDamage + 1)) + MinDamage;
         return randomDamage;
     }
 
     void Heal()
     {
-        srand(time(0));  // Corrected to lowercase
+        srand(time(0));  
         int randomHeal = (rand() % (MaxHealing - MinHealing + 1)) + MinHealing;
 
         Health = Health + randomHeal;
@@ -112,6 +113,8 @@ int main()
 {
     Game_Story();
     char User_Input;
+    
+   
 
     do
     {
@@ -123,6 +126,12 @@ int main()
             string player_name;
             cout << "Enter the name of your hero: ";
             cin >> player_name;
+
+            
+            
+
+           
+
 
 
             Player Warrior(player_name, 100, 40, 50);
