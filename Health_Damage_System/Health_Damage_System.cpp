@@ -127,12 +127,6 @@ int main()
             cout << "Enter the name of your hero: ";
             cin >> player_name;
 
-            
-            
-
-           
-
-
 
             Player Warrior(player_name, 100, 40, 50);
             Warrior.Display_Player_Stats();

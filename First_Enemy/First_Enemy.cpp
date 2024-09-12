@@ -8,13 +8,13 @@ class Player
 
 private:
 
-    int health = 100;
+    int Health = 100;
 
-    int maxDamage = 30;
-    int minDamage = 20;
+    int Max_Damage = 30;
+    int Min_Damage = 20;
 
-    int maxHealing = 15;
-    int minHealing = 8;
+    int Max_Healing = 15;
+    int Min_Healing = 8;
 
 
 public:
@@ -24,60 +24,60 @@ public:
         cout << "\nHi my name is Sourav! We need to save Kingdom" << endl;
         cout << "Here are some stats that might be useful for you going ahead" << endl;
 
-        cout << "\nSourav Health: " << health;
+        cout << "\nSourav Health: " << Health;
         cout << "\n__________________________________\n";
-        cout << "Sourav Attack Range is between " << minDamage << "-" << maxDamage << ".";
+        cout << "Sourav Attack Range is between " << Min_Damage << "-" << Max_Damage << ".";
         cout << "\n__________________________________\n";
-        cout << "Sourav Healing Range is between " << minHealing << "-" << maxHealing << "." << endl;
+        cout << "Sourav Healing Range is between " << Min_Healing << "-" << Max_Healing << "." << endl;
 
     }
 
 
 
-    int GetHealth()
+    int Get_Health()
     {
-        return health;
+        return Health;
     }
 
-    void TakeDamage(int damage)
+    void Take_Damage(int Damage)
     {
 
         cout << "Ohh No , a critical hit to player" << endl;
-        cout << "Enemy is dealing damage of " << damage << " to the Sourav!" << endl;
-        health = health - damage;
+        cout << "Enemy is dealing damage of " << Damage << " to the Sourav!" << endl;
+        Health = Health - Damage;
 
-        if (health < 0)
+        if (Health < 0)
         {
             cout << "Player Died!!!, You Lost" << endl;
         }
         else
         {
-            cout << "Sourav Current Health after reciving damage is : " << health << endl;
+            cout << "Sourav Current Health after reciving damage is : " << Health << endl;
         }
 
     }
 
-    int GiveDamage()
+    int Give_Damage()
     {
 
         srand(time(0));
-        int randomDamage = (rand() % (maxDamage - minDamage + 1) + minDamage);
+        int Random_Damage = (rand() % (Max_Damage - Min_Damage + 1) + Min_Damage);
 
 
 
-        return randomDamage;
+        return Random_Damage;
     }
 
     void Heal()
     {
         srand(time(0));
-        int randomHeal = (rand() % (maxHealing - minHealing + 1) + minHealing);
+        int randomHeal = (rand() % (Max_Healing - Min_Healing + 1) + Min_Healing);
 
-        health = health + randomHeal;
+        Health = Health + randomHeal;
 
         cout << "Sourav Healed with HP of " << randomHeal << endl;
 
-        cout << "Sourav Health after healing " << health << endl;
+        cout << "Sourav Health after healing " << Health << endl;
     }
 
 };
@@ -86,10 +86,10 @@ class Enemy
 {
 private:
 
-    int health = 100;
+    int Health = 100;
 
-    int maxDamage = 20;
-    int minDamage = 10;
+    int Max_Damage = 20;
+    int Min_Damage = 10;
 
 
 public:
@@ -100,79 +100,79 @@ public:
     }
 
 
-    int GetHealth()
+    int Get_Health()
     {
-        return health;
+        return Health;
     }
 
-    void TakeDamage(int damage)
+    void Take_Damage(int Damage)
     {
 
         cout << "Ohh No , a critical hit to Enemy" << endl;
-        cout << "Player is dealing damage of " << damage << " to the Enemy!" << endl;
-        health = health - damage;
+        cout << "Player is dealing damage of " << Damage << " to the Enemy!" << endl;
+        Health = Health - Damage;
 
-        if (health < 0)
+        if (Health < 0)
         {
             cout << "Enemy Died!!!, You Won" << endl;
         }
         else
         {
-            cout << "Enemy's Current Health after reciving damage is : " << health << endl;
+            cout << "Enemy's Current Health after reciving damage is : " << Health << endl;
         }
 
 
     }
 
-    int GiveDamage()
+    int Give_Damage()
     {
 
         srand(time(0));
-        int randomDamage = (rand() % (maxDamage - minDamage + 1) + minDamage);
+        int Random_Damage = (rand() % (Max_Damage - Min_Damage + 1) + Min_Damage);
 
 
 
-        return randomDamage;
+        return Random_Damage;
     }
 
 
 };
 
-void gameLoop(Player player, Enemy enemy)
+void Game_Loop(Player Player, Enemy Enemy) 
 {
-    char playerChoice;
+    char Player_Choice;
 
 
     do
     {
 
         cout << "Press A to attack or H to heal" << endl;
-        cin >> playerChoice;
+        cin >> Player_Choice;
 
-        if (playerChoice == 'a' || playerChoice == 'A')
+        if (Player_Choice == 'a' || Player_Choice == 'A')
         {
             system("clear");
-            // Perform Attack
-            enemy.TakeDamage(player.GiveDamage());
+            
+            Enemy.Take_Damage(Player.Give_Damage());
 
 
-            if (enemy.GetHealth() > 0)
+            if (Enemy.Get_Health() > 0)
             {
                 cout << "Ha ha ha , Its my turn now!" << endl;
-                player.TakeDamage(enemy.GiveDamage());
+                Player.Take_Damage(Enemy.Give_Damage());
             }
 
         }
-        else if (playerChoice == 'h' || playerChoice == 'H')
+        else if (Player_Choice == 'h' || Player_Choice == 'H')
         {
             system("clear");
-            // Perform Heal
-            player.Heal();
+         
+            Player.Heal();
 
-            if (enemy.GetHealth() > 0)
+            if (Enemy.Get_Health() > 0)
             {
                 cout << "Ha ha ha , Its my turn now!" << endl;
-                player.TakeDamage(enemy.GiveDamage());
+                Player.Take_Damage(Enemy.Give_Damage());
             }
 
         }
@@ -182,7 +182,7 @@ void gameLoop(Player player, Enemy enemy)
             cout << "Invalid Input" << endl;
         }
 
-    } while (player.GetHealth() > 0 && enemy.GetHealth() > 0);
+    } while (Player.Get_Health() > 0 && Enemy.Get_Health() > 0);
 }
 
 void gameStory()
@@ -212,7 +212,7 @@ int main()
             Player  playerObj;
             Enemy enemyObj;
 
-            gameLoop(playerObj, enemyObj);
+            Game_Loop(playerObj, enemyObj);
 
         }
         else
